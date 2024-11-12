@@ -36,6 +36,10 @@ class RegistrationPage extends StatelessWidget {
                     onPressed: () async {
                       if (formKey.currentState!.validate()) {
                         await provider.checkSignUp();
+                        provider.email.clear();
+                        provider.password.clear();
+                        provider.name.clear();
+                        provider.phone.clear();
                         if (provider.user == null) {
                           ScaffoldMessenger.of(context)
                               .showSnackBar(const SnackBar(
