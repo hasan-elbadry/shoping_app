@@ -43,7 +43,7 @@ class LoginPage extends StatelessWidget {
                       if (formKey.currentState!.validate()) {
                         await provider.checkLogin();
                         provider.email.clear();
-                        provider.password.text = '';
+                        provider.password.clear();
 
                         if (provider.user == null) {
                           ScaffoldMessenger.of(context)
